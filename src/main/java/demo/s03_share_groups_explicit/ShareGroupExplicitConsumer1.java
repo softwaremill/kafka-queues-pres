@@ -38,6 +38,8 @@ public class ShareGroupExplicitConsumer1 {
                 if (!records.isEmpty()) {
                     System.out.println("---");
                 }
+
+                consumer.commitSync();
             }
         }
     }

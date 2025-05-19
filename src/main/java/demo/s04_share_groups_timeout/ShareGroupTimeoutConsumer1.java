@@ -1,15 +1,22 @@
-package demo.s03_share_groups_timeout;
+package demo.s04_share_groups_timeout;
 
-import org.apache.kafka.clients.consumer.*;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaShareConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
-public class ShareGroupConsumer2 {
-    public static void main(String[] args) {
+public class ShareGroupTimeoutConsumer1 {
+    private static final Logger logger = LoggerFactory.getLogger(ShareGroupTimeoutConsumer1.class);
+
+    public static void main(String[] args) throws InterruptedException {
         var props = new Properties();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
@@ -25,18 +32,12 @@ public class ShareGroupConsumer2 {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
 
                 for (ConsumerRecord<String, String> record : records) {
-                    var ackType = switch (r.nextInt(3)) {
-                        case 0 -> AcknowledgeType.ACCEPT;
-                        case 1 -> AcknowledgeType.RELEASE;
-                        default -> AcknowledgeType.REJECT;
-                    };
-
-                    System.out.println("Received: " + record.value() + ", ackType: " + ackType);
-                    consumer.acknowledge(record, ackType);
+                    logger.info("Received: " + record.value());
                 }
 
                 if (!records.isEmpty()) {
-                    System.out.println("---");
+                    logger.info("And now sleeping, before commiting ...");
+                    Thread.sleep(60 * 1000);
                 }
             }
         }

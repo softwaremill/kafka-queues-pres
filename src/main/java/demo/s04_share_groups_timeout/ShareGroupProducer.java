@@ -1,4 +1,4 @@
-package demo.s03_share_groups_timeout;
+package demo.s04_share_groups_timeout;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
