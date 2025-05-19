@@ -1,0 +1,13 @@
+update config/server.properties
+
+KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
+bin/kafka-storage.sh format --standalone -t $KAFKA_CLUSTER_ID -c config/server.properties
+bin/kafka-server-start.sh config/server.properties
+
+bin/kafka-topics.sh --create --topic topic1 --partitions 10 --bootstrap-server localhost:9092
+bin/kafka-topics.sh --create --topic topic2 --partitions 10 --bootstrap-server localhost:9092
+bin/kafka-topics.sh --create --topic topic3 --partitions 10 --bootstrap-server localhost:9092
+
+1. topic mode (random group ids)
+2. consumer groups: same group id, same key -> one consumer; different keyes -> different consumers
+3. share groups: same group id, same key -> different consumers
