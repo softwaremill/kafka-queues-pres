@@ -1,0 +1,17 @@
+Share groups:
+
+⭐️ special topic (`__consumer_offsets` && `__share_group_state`) to store group state
+⭐️ at-least once or at-most-once
+
+⚠️ no ordering (even per-partition)
+⚠️ concurrent consumption possible
+   + `acquired` state not persisted - as in consumer groups
+⚠️ no DLQ
+⚠️ no delayed delivery
+❓ performance
+
+✅️ selective commits
+✅️ unbounded parallelism
+✅️ no fencing events
+✅️ head-of-line-blocking possibly solved - given enough consumers
+✅️ upcoming integration with transactions

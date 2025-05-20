@@ -1,0 +1,15 @@
+Consumer groups:
+
+⭐️ special topic (`__consumer_offsets`) to store consumed offsets
+⭐️ at-least once or at-most-once
+
+⚠️ up-to-offset commits
+⚠️ parallelism limited by number of partitions
+⚠️ fencing events (rebalancing)
+⚠️ concurrent consumption still possible
+⚠️ head-of-line blocking
+
+✅️ ordered consumption per-partition
+✅️ integrated with transactions
+✅ low communication overhead
+✅ high performance

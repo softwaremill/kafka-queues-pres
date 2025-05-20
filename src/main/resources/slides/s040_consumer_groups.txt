@@ -1,0 +1,16 @@
+Consumer groups:
+⭐️ collaborative consumption
+⭐️ partitions: also a unit of consumption
+
+If a topic has 9 partitions and 4 consumers in a single group:
+consumer1: 0, 3, 5
+consumer2: 1, 4
+consumer3: 2, 7
+consumer4: 8, 6
+
+After a consumer leaves, rebalancing occurs:
+consumer1: 0, 3, 5
+consumer2: 1, 4, 8
+consumer3: 2, 7, 6
+
+👹 Demo 2: consumer groups

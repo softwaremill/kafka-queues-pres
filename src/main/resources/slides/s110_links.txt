@@ -1,0 +1,9 @@
+* KIP-932: Queues for Kafka
+  https://cwiki.apache.org/confluence/display/KAFKA/KIP-932%3A+Queues+for+Kafka#KIP932:QueuesforKafka-Persistenceandfail-over
+* Queues for Kafka early access release notes
+  https://cwiki.apache.org/confluence/display/KAFKA/Queues+for+Kafka+%28KIP-932%29+-+Early+Access+Release+Notes
+* Let's Take a Look at... KIP-932: Queues for Kafka!
+  https://www.morling.dev/blog/kip-932-queues-for-kafka/
+* Kafka queues: now and in the future
+  https://softwaremill.com/kafka-queues-now-and-in-the-future/#kafka-queues-now-and-in-the-future
+

@@ -1,0 +1,21 @@
+👷 We deliver software development expertise
+
+📡 Technologies we specialize in:
+   - Kafka
+   - Java, Scala, Kotlin: JVM
+   - Rust
+   - TypeScript
+   - Kubernetes, Grafana
+
+🧑‍🌾 Areas of engagement:
+   - distributed systems
+   - performance tuning
+   - migrations, modernization (DevOps)
+   - scaling (throughput, latency, feature delivery)
+   - modeling complex domains (DDD, event storming)
+   - custom ML/AI models
+
+🧑‍🚀 We are involved in the community
+   - blog: https://softwaremill.com/blog
+   - OSS: sttp, tapir, elasticmq, struts, hibernate envers
+   - educational materials: https://softwaremill.com/kafka-visualisation/

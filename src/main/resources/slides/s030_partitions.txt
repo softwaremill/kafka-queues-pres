@@ -1,0 +1,8 @@
+Kafka topic:
+⭐️ contains a number of partitions
+⭐️ ~ shards
+
+Topic partitions:
+⭐️ main unit of scaling & replication
+
+👹 Demo 1: topics

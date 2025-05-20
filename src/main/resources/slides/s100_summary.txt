@@ -1,0 +1,15 @@
+In summary:
+
+✅️ share groups join consumer groups as a collaborative consumption option
+⭐️ new stateful, broker-managed components
+⚠️ share groups are not production ready yet
+✅️ share groups offer individual message acknowledgment, but with caveats
+✅️ unbounded parallelism
+✅️ possible solution to head-of-line blocking
+✅️ expected high performance
+
+🐰 MQ systems still have an edge (RabbitMQ, Artemis):
+   - routing (direct, fanout)
+   - delayed delivery, message priorities
+   - includes messaging patterns such as request/reply
+   - DLQs

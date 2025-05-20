@@ -1,0 +1,12 @@
+Kafka until now:
+
+❤️ replicated durable log
+❤️ topic semantics
+❤️ consumer groups
+
+Kafka since 4.x:
+
+🍀 share groups
+  - enabling implementing queueing use-cases
+  - not production ready!
+  - binary formats expected to stabilize in 4.1

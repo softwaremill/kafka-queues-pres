@@ -27,6 +27,8 @@ public class ConsumerGroupConsumer2 {
                 for (ConsumerRecord<String, String> record : records) {
                     System.out.println("Received: " + record.value());
                 }
+
+                consumer.commitSync();
             }
         }
     }

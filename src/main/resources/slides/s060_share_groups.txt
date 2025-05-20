@@ -1,0 +1,12 @@
+Share groups:
+
+1. consumer sends a heartbeat to the group coordinator
+2. group coordinator assigns a number of share-partitions (`SimpleAssignor`)
+
+✅ these partitions are *not* exclusive
+✅ no fencing required - temporary fluctuations possible
+
+New components, managed by the broker, with in-memory views:
+⭐️ group coordinator (co-located with the leader of `__consumer_offsets`)
+⭐️ share coordinator (co-located with the leader of `__share_group_state`)
+⭐️ share-partition leader
