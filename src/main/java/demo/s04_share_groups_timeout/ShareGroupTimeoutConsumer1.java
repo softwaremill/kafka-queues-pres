@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
-import java.util.Random;
 
 public class ShareGroupTimeoutConsumer1 {
     private static final Logger logger = LoggerFactory.getLogger(ShareGroupTimeoutConsumer1.class);
@@ -22,8 +21,6 @@ public class ShareGroupTimeoutConsumer1 {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "group3");
-
-        var r = new Random();
 
         try (var consumer = new KafkaShareConsumer<String, String>(props)) {
             consumer.subscribe(List.of("topic3"));

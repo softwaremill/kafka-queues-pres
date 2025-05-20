@@ -1,6 +1,9 @@
 package demo.s04_share_groups_timeout;
 
-import org.apache.kafka.clients.consumer.*;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaShareConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
-import java.util.Random;
 
 public class ShareGroupTimeoutConsumer2 {
     private static final Logger logger = LoggerFactory.getLogger(ShareGroupTimeoutConsumer2.class);
@@ -19,8 +21,6 @@ public class ShareGroupTimeoutConsumer2 {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "group3");
-
-        var r = new Random();
 
         try (var consumer = new KafkaShareConsumer<String, String>(props)) {
             consumer.subscribe(List.of("topic3"));
